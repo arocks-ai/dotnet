@@ -88,15 +88,34 @@ query {
 }
 ```
 
-####  Create Data (POST Method
-
+####  Create Data (POST Method)
+POST REST API: api/TodoItems with data in body
 ```
+mutation {
+  createTodoItem(name: "shower3", isComplete: true) {
+    id
+    name
+    isComplete
+  }
+}
 ```
 
 ####  Update Data (PUT Method)
+PUT REST API: api/TodoItems/1 and also data in body
 ```
+mutation {
+  updateTodoItem(id: 1, name: "shower2", isComplete: false) {
+    id
+    name
+    isComplete
+  }
+}
 ```
 
 ####  Delete Data (DELETE Method)
+DELETE REST API: api/TodoItems/1
 ```
+mutation {
+  deleteTodoItem(id: 1)
+}
 ```
