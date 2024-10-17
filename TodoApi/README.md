@@ -1,8 +1,10 @@
 # Integrate GraphQL using HotChocolate into ASP.NET Core project
 
 ### 1.Install Required Packages for HotChocolate.:
+```
 dotnet add package HotChocolate.AspNetCore
 dotnet add package HotChocolate.AspNetCore.Playground
+```
 
 ### 2.Define GraphQL Types and Schema:
 GraphQL/TodoItemType.cs   GraphQL schema definition with method  Configur(), to expose TodoItemModel using GraphQL API. 
@@ -15,6 +17,7 @@ and a GraphQL schema for exposing the data through an API.
 #### Fetch the data from the DB
 Query class is registed as AddQueryType()
 
+```
 GraphQL/Query.cs: Query class is a GraphQL API implementation for fetch (or query) the data from the DB
     // Get: api/TodoItems
     // Fetching all items form the database
@@ -23,6 +26,7 @@ GraphQL/Query.cs: Query class is a GraphQL API implementation for fetch (or quer
     // Get: api/TodoItems/1
     // Fetching a specific item by its id form the database
     public TodoItemModel GetTodoItem([Service] TodoContext context, int id) => context.TodoItems.FirstOrDefault(t => t.Id == id);
+```
 
 #### Fetch the data from the DB
 Mutation class for POST requests
@@ -30,6 +34,8 @@ Mutation class for POST requests
 
 ###  Configure GraphQL services 
 Configure the GraphQL services and middleware in Program.cs
+
+```
 // Add GraphQL services
 builder.Services
     .AddGraphQLServer()
@@ -45,7 +51,7 @@ app.UsePlayground(new PlaygroundOptions
     QueryPath = "/graphql",
     Path = "/playground"
 });
-
+```
 
 
 ###  Test API
@@ -54,6 +60,7 @@ Fetch all the to-do items
 GraphQL URL - https://localhost:7087/playground/
 Swagger URL - https://localhost:7087/swagger/index.html
 
+```
 https://localhost:7087/playground/../graphql
 Get REST API: api/TodoItems
 
@@ -76,10 +83,17 @@ query {
     isComplete
   }
 }
-
+```
 
 ####  Create Data (POST Method
 
+```
+```
+
 ####  Update Data (PUT Method)
+```
+```
 
 ####  Delete Data (DELETE Method)
+```
+```
