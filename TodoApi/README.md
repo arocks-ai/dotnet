@@ -14,7 +14,7 @@ It inherits from ObjectType<TodoItemModel>, which is a generic class provided by
 TodoItemModel.cs - TodoItemModel class encapsulate the essential data for a to-do item. It is a database context for storing and retrieving to-do items, 
 and a GraphQL schema for exposing the data through an API.
 
-#### Fetch the data from the DB
+#### Fetch or query Logic
 Query class is registed as AddQueryType()
 
 ```
@@ -28,7 +28,7 @@ GraphQL/Query.cs: Query class is a GraphQL API implementation for fetch (or quer
     public TodoItemModel GetTodoItem([Service] TodoContext context, int id) => context.TodoItems.FirstOrDefault(t => t.Id == id);
 ```
 
-#### Fetch the data from the DB
+#### Update logic
 Mutation class for POST requests
 
 
