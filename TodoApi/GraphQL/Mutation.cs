@@ -13,6 +13,7 @@ public class Mutation
     }
 
 
+    // REST API: PUT: api/TodoItems/1
     public async Task<TodoItemModel> UpdateTodoItem(
         long id,
         string name,
@@ -47,6 +48,7 @@ public class Mutation
     }
 
 
+    // REST API: POST: api/TodoItems
     public async Task<TodoItemModel> CreateTodoItem(
         string name,
         bool isComplete,
@@ -64,7 +66,8 @@ public class Mutation
         return todoItem;
     } 
 
-public async Task<bool> DeleteTodoItem(
+    // REST API: DELETE: api/TodoItems/1
+    public async Task<bool> DeleteTodoItem(
         long id,
         [Service] TodoContext context)
     {

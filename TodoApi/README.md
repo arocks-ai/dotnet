@@ -10,15 +10,15 @@ dotnet add package HotChocolate.AspNetCore.Playground
 GraphQL/TodoItemType.cs   GraphQL schema definition with method  Configur(), to expose TodoItemModel using GraphQL API. 
 It inherits from ObjectType<TodoItemModel>, which is a generic class provided by the HotChocolate library.
 
-#### Data model
+####  Model class
 TodoItemModel.cs - TodoItemModel class encapsulate the essential data for a to-do item. It is a database context for storing and retrieving to-do items, 
 and a GraphQL schema for exposing the data through an API.
 
-#### Fetch or query Logic
-Query class is registed as AddQueryType()
+#### Query class
+GraphQL/Query.cs - Query class is registed as AddQueryType()
 
 ```
-GraphQL/Query.cs: Query class is a GraphQL API implementation for fetch (or query) the data from the DB
+Query class is a GraphQL API implementation for fetch (or query) the data from the DB
     // Get: api/TodoItems
     // Fetching all items form the database
     public IQueryable<TodoItemModel> GetTodoItems([Service] TodoContext context) => context.TodoItems;
@@ -28,8 +28,8 @@ GraphQL/Query.cs: Query class is a GraphQL API implementation for fetch (or quer
     public TodoItemModel GetTodoItem([Service] TodoContext context, int id) => context.TodoItems.FirstOrDefault(t => t.Id == id);
 ```
 
-#### Update logic
-Mutation class for POST requests
+#### Mutation class
+GraphQL/Mutation.cs - Mutation class for updating the data similar to POST/PUT/DELETE methods
 
 
 ###  Configure GraphQL services 
@@ -62,7 +62,7 @@ Swagger URL - https://localhost:7087/swagger/index.html
 
 
 ####  Fetch Data for all the to-do items 
-Get REST API: api/TodoItems
+REST API: GET: api/TodoItems
 
 ```
 Graphy QL Query:
@@ -76,7 +76,7 @@ query {
 ```
 
 ####  Fetch Data for single items based on Id
-Get REST API: api/TodoItems/1
+REST API: GET: api/TodoItems/1
 
 ```
 query {
@@ -89,7 +89,7 @@ query {
 ```
 
 ####  Create Data (POST Method)
-POST REST API: api/TodoItems with data in body
+REST API: POST: api/TodoItems
 ```
 mutation {
   createTodoItem(name: "shower3", isComplete: true) {
@@ -101,7 +101,7 @@ mutation {
 ```
 
 ####  Update Data (PUT Method)
-PUT REST API: api/TodoItems/1 and also data in body
+REST API: PUT: api/TodoItems/1
 ```
 mutation {
   updateTodoItem(id: 1, name: "shower2", isComplete: false) {
@@ -113,7 +113,7 @@ mutation {
 ```
 
 ####  Delete Data (DELETE Method)
-DELETE REST API: api/TodoItems/1
+REST API: DELETE: api/TodoItems/1
 ```
 mutation {
   deleteTodoItem(id: 1)
