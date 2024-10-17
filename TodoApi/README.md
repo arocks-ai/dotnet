@@ -1,12 +1,18 @@
-# Integrate GraphQL using HotChocolate into ASP.NET Core project
+#  Asp.NET core Web API using REST API and also using GraphQL  
+- Asp.NET core 8.0 based Web API
+- API provides to store, retrieve and update to-do tasks
+- Implements both REST API and GraphQL APIs
+- HotChocolate packages are used for GrpahQL
+- GraphQL related classes are in GraphQL directory 
 
-### 1.Install Required Packages for HotChocolate.:
+
+### Install Required Packages for HotChocolate.:
 ```
 dotnet add package HotChocolate.AspNetCore
 dotnet add package HotChocolate.AspNetCore.Playground
 ```
 
-### 2.Define GraphQL Types and Schema:
+### Define GraphQL Types and Schema:
 GraphQL/TodoItemType.cs   GraphQL schema definition with method  Configur(), to expose TodoItemModel using GraphQL API. 
 It inherits from ObjectType<TodoItemModel>, which is a generic class provided by the HotChocolate library.
 
