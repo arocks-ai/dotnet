@@ -1,9 +1,12 @@
-#  Asp.NET core Web API using REST API and also using GraphQL  
+#  Asp.NET core Web API 
 - Asp.NET core 8.0 based Web API
 - API provides to store, retrieve and update to-do tasks
-- Implements both REST API and GraphQL APIs
+- Implements both REST API and GraphQL based APIs
 - HotChocolate packages are used for GrpahQL
 - GraphQL related classes are in GraphQL directory 
+
+- GraphQL URL - https://localhost:7087/playground/
+- Swagger URL - https://localhost:7087/swagger/index.html
 
 
 ### Install Required Packages for HotChocolate.:
@@ -62,10 +65,8 @@ app.UsePlayground(new PlaygroundOptions
 
 ###  Test API
 
-
-GraphQL URL - https://localhost:7087/playground/
-Swagger URL - https://localhost:7087/swagger/index.html
-
+- GraphQL URL - https://localhost:7087/playground/
+- Swagger URL - https://localhost:7087/swagger/index.html
 
 ####  Fetch Data for all the to-do items 
 REST API: GET: api/TodoItems
