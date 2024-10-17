@@ -55,15 +55,16 @@ app.UsePlayground(new PlaygroundOptions
 
 
 ###  Test API
-####  Fetch Data
-Fetch all the to-do items 
+
+
 GraphQL URL - https://localhost:7087/playground/
 Swagger URL - https://localhost:7087/swagger/index.html
 
-```
-https://localhost:7087/playground/../graphql
+
+####  Fetch Data for all the to-do items 
 Get REST API: api/TodoItems
 
+```
 Graphy QL Query:
 query {
   todoItems {
@@ -72,10 +73,12 @@ query {
     isComplete
   }
 }
+```
 
-Fetch the to-do item specified by Id 
+####  Fetch Data for single items based on Id
 Get REST API: api/TodoItems/1
 
+```
 query {
   todoItem(id: 1) {
     id
